@@ -32,13 +32,14 @@ package{
         }
         
         private function init():void{
+		
             // Allow JS calls from other domains
             Security.allowDomain("*");
             Security.allowInsecureDomain("*");
 
             if(loaderInfo.hasOwnProperty("uncaughtErrorEvents")){
                 // we'll want to suppress ANY uncaught debug errors in production (for the sake of ux)
-                // IEventDispatcher(loaderInfo["uncaughtErrorEvents"]).addEventListener("uncaughtError", onUncaughtError);
+                //IEventDispatcher(loaderInfo["uncaughtErrorEvents"]).addEventListener("uncaughtError", onUncaughtError);
             }
             
             if(ExternalInterface.available){

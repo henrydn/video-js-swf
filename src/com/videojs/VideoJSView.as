@@ -25,6 +25,13 @@ package com.videojs{
         
         private var _model:VideoJSModel;
         
+	public function log(message:String):void
+	{
+		if (ExternalInterface.available) {
+			ExternalInterface.call("console.log",message);
+		}
+	}
+	    
         public function VideoJSView(){
             
             _model = VideoJSModel.getInstance();
@@ -103,7 +110,7 @@ package com.videojs{
             }
             
             if(_uiVideo.videoWidth != 0){
-                __nativeWidth = _uiVideo.videoWidth;
+               // __nativeWidth = _uiVideo.videoWidth;
             }
             
             var __nativeHeight:int = 100;
@@ -113,7 +120,7 @@ package com.videojs{
             }
             
             if(_uiVideo.videoWidth != 0){
-                __nativeHeight = _uiVideo.videoHeight;
+               // __nativeHeight = _uiVideo.videoHeight;
             }
 
             // first, size the whole thing down based on the available width
@@ -131,6 +138,7 @@ package com.videojs{
             _uiVideo.x = Math.round((_model.stageRect.width - _uiVideo.width) / 2);
             _uiVideo.y = Math.round((_model.stageRect.height - _uiVideo.height) / 2);
             
+	    log("Native Width: " + __nativeWidth + "   Native Height: "  + __nativeHeight);
 
         }
 
