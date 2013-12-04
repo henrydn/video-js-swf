@@ -28,7 +28,7 @@ package com.videojs{
 	public function log(message:String):void
 	{
 		if (ExternalInterface.available) {
-			ExternalInterface.call("console.log",message);
+			//ExternalInterface.call("console.log",message);
 		}
 	}
 	    
@@ -138,7 +138,7 @@ package com.videojs{
             _uiVideo.x = Math.round((_model.stageRect.width - _uiVideo.width) / 2);
             _uiVideo.y = Math.round((_model.stageRect.height - _uiVideo.height) / 2);
             
-	    log("Native Width: " + __nativeWidth + "   Native Height: "  + __nativeHeight);
+	    //log("Native Width: " + __nativeWidth + "   Native Height: "  + __nativeHeight);
 
         }
 
